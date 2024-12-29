@@ -50,7 +50,6 @@ const handleImageUpload = (event) => {
 };
 
 const handleUpdate = async () => {
-  isLoading.value = true;
   if (
     !titlePost.value ||
     !sub_titlePost.value ||
