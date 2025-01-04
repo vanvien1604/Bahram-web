@@ -66,8 +66,12 @@ const deletePost = (id) => {
       </tr>
     </thead>
     <tbody>
-      <tr v-for="item in listPost" :key="item.id">
-        <th scope="row">1</th>
+      <tr v-for="(item, index) in listPost" :key="item.id">
+        <th scope="row">
+          <div class="number-container">
+            {{ index + 1 }}
+          </div>
+        </th>
         <td>{{ item.Title }}</td>
         <td>{{ item.SubTitle }}</td>
         <td><img :src="item.Image" class="image-td" alt="..." /></td>
@@ -88,6 +92,12 @@ const deletePost = (id) => {
               @click="deletePost(item.id)"
             />
           </div>
+        </td>
+      </tr>
+      <tr v-for="item in listPost" :key="item.id">
+        <td class="chill">
+          <p>SubTitle: {{ item.SubTitle }}</p>
+          <p>Author: {{ item.Author }}</p>
         </td>
       </tr>
     </tbody>
